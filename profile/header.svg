@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+  <title id="title">Northguard Security</title>
+  <desc id="desc">Independent Experimental Security Research</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111f"/>
+      <stop offset="55%" stop-color="#0b1d2a"/>
+      <stop offset="100%" stop-color="#0a3338"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4cc9f0"/>
+      <stop offset="50%" stop-color="#3dd6c6"/>
+      <stop offset="100%" stop-color="#7ce7c8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="280" rx="18" fill="url(#bg)"/>
+  <rect width="1200" height="280" rx="18" fill="url(#glow)"/>
+
+  <g opacity="0.14" stroke="#72e3dc" stroke-width="1" fill="none">
+    <path d="M830 45 L905 82 L980 55 L1050 112 L1130 76"/>
+    <path d="M835 182 L910 145 L980 177 L1055 132 L1135 165"/>
+    <circle cx="905" cy="82" r="5" fill="#72e3dc"/>
+    <circle cx="980" cy="55" r="5" fill="#72e3dc"/>
+    <circle cx="1050" cy="112" r="5" fill="#72e3dc"/>
+    <circle cx="910" cy="145" r="5" fill="#72e3dc"/>
+    <circle cx="980" cy="177" r="5" fill="#72e3dc"/>
+    <circle cx="1055" cy="132" r="5" fill="#72e3dc"/>
+  </g>
+
+  <rect x="62" y="59" width="7" height="104" rx="3.5" fill="url(#accent)"/>
+
+  <text x="96" y="116" fill="#f4fbff" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" letter-spacing="3">NORTHGUARD SECURITY</text>
+  <text x="98" y="157" fill="#a8c6d1" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" letter-spacing="1.2">Independent Experimental Security Research</text>
+
+  <line x1="98" y1="194" x2="568" y2="194" stroke="url(#accent)" stroke-width="2" opacity="0.8"/>
+  <text x="98" y="225" fill="#70a3ad" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" letter-spacing="2.2">OBSERVE  ·  MEASURE  ·  FALSIFY  ·  REPEAT</text>
+</svg>
