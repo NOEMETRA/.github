@@ -30,8 +30,25 @@ jobs:
           profile = Path("profile/README.md").read_text(encoding="utf-8")
           contributing = Path("CONTRIBUTING.md").read_text(encoding="utf-8")
           assert Path("profile/header.svg").is_file(), "Missing banner"
-          ET.parse("profile/header.svg")
+          for svg_path in (
+              "profile/header.svg",
+              "brand/avatar.svg",
+              "brand/mark.svg",
+              "brand/lockup-light.svg",
+          ):
+              asset = Path(svg_path)
+              assert asset.is_file(), f"Missing brand asset: {svg_path}"
+              tree = ET.parse(asset)
+              root = tree.getroot()
+              assert root.tag == "{http://www.w3.org/2000/svg}svg"
+              titles = root.findall("{http://www.w3.org/2000/svg}title")
+              assert len(titles) == 1 and "NOEMETRA" in (titles[0].text or ""), svg_path
+              assert "<script" not in asset.read_text(encoding="utf-8"), svg_path
           assert "./header.svg" in profile, "Banner not referenced"
+          assert "**NOEMETRA**" in profile, "Brand not present"
+          assert "Systems. Signals. Evidence." in profile, "Research triad not present"
+          assert Path("brand/README.md").is_file()
+          assert Path("brand/MIGRATION.md").is_file()
           for slug in (
               "PAW--Phishing-Attribution-Workbench--",
               "Reverse-Observer",
