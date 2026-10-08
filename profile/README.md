@@ -1,71 +1,76 @@
 <p align="center">
-  <img src="./header.svg" alt="Northguard Security — Independent Experimental Security Research" width="100%" />
+  <img src="./header.svg" alt="Northguard Security — independent security research" width="100%" />
 </p>
 
-Northguard Security is a research workspace for building and testing technical ideas across network behavior, protocol analysis, digital forensics, attribution, systems observability, wireless security, and defensive security engineering.
+# Security engineering grounded in evidence
 
-The projects here are experiments first.
+**Northguard Security** is an independent research workspace building practical tools and controlled experiments in digital forensics, network protocols, traffic analysis, and application security.
 
-The objective is not to make a capability sound impressive. It is to determine whether the underlying mechanism can actually be observed, reproduced, measured, and falsified.
+The work starts with software and a concrete technical question. The result is measured against observations, negative controls, and failure cases—not just a successful run or an impressive-looking output.
 
-## Research approach
+**Explore the public labs:** [PAW](https://github.com/Northguard-Security/PAW--Phishing-Attribution-Workbench--) · [Reverse Observer](https://github.com/Northguard-Security/Reverse-Observer) · [Mirage Flow](https://github.com/Northguard-Security/mirage-flow) · [Chimera](https://github.com/Northguard-Security/Chimera)
 
-A capability is not considered demonstrated because a program produced the expected output.
+## Public research projects
 
-The working method is closer to:
+| Project | What it does | Where the evidence comes from |
+| :--- | :--- | :--- |
+| **[PAW — Phishing Attribution Workbench](https://github.com/Northguard-Security/PAW--Phishing-Attribution-Workbench--)** | Ingests suspicious email, reconstructs delivery-path hypotheses, extracts indicators, correlates infrastructure, and produces forensic case artifacts. | Original messages, headers, hashes, case manifests, enrichment results, and explicit scoring heuristics. |
+| **[Reverse Observer](https://github.com/Northguard-Security/Reverse-Observer)** | Probes network-path and middlebox responses to controlled packet and protocol variations. | Raw-packet observations, structured experiment logs, and documented negative or inconclusive results. |
+| **[Mirage Flow](https://github.com/Northguard-Security/mirage-flow)** | Tests known packet-timing patterns under jitter and loss, alongside a modeled response-state controller. | Synthetic timing trials, correlation scores against comparison keys, and packet-timestamp measurements. |
+| **[Chimera](https://github.com/Northguard-Security/Chimera)** | Reproduces a clipboard-to-DOM-XSS trust-boundary failure in a deliberately vulnerable web fixture. | A controlled source page, an unsafe destination sink, and observable browser/network behavior. |
+
+These are **research tools and laboratory proofs of concept**, with different levels of implementation and validation. Read each repository's status and limitations before using or interpreting its results.
+
+## Research areas
+
+- **Email forensics and infrastructure correlation:** preserve source evidence, derive indicators, and separate correlation from operator attribution.
+- **Network and protocol behavior:** inspect stateful devices, timing signals, and transport-specific responses under repeatable stimuli.
+- **Application trust boundaries:** reproduce concrete failure modes and identify conditions under which they disappear.
+- **Detection and observability:** distinguish the fact that a signal was detected from claims about malicious intent, identity, or real-world effectiveness.
+
+Some other work remains in private research repositories. The public projects above are the documented entry points.
+
+## From mechanism to evidence
 
 ```text
-hypothesis
-    ↓
-controlled stimulus
-    ↓
-observable signal
-    ↓
-measurement
-    ↓
-negative controls
-    ↓
-repetition
-    ↓
-verdict
+technical question
+       |
+       v
+working prototype
+       |
+       v
+controlled stimulus + baseline
+       |
+       v
+measurement + negative controls
+       |
+       v
+repetition / falsification
+       |
+       v
+documented result + known limits
 ```
 
-Results are treated according to the evidence available: simulated, observed under controlled conditions, reproduced on a real system, falsified, or still unverified.
+A result should state **what ran, what was observed, under which conditions, and what alternative explanations remain**.
 
-Negative results are retained when they help define the boundary of an experiment.
+We distinguish:
 
-## Areas of exploration
+- **Implemented:** code exists and executes a specified operation.
+- **Observed:** a measurable result occurred in a recorded environment.
+- **Reproduced:** the result survives a defined repeat test.
+- **Validated:** independent checks support the intended interpretation.
+- **Unverified or falsified:** the evidence is insufficient, or a tested prediction did not hold.
 
-- Network-path and middlebox behavior
-- Protocol state machines and timing signals
-- Digital forensics and infrastructure attribution
-- Wireless and 802.11 experimentation
-- Kernel and system observability
-- Detection and correlation of weak signals
-- Browser and application trust boundaries
-- RF, sensing and signal-processing prototypes
-- Controlled security research environments
+An output is not an attribution. A correlation is not an identity. A simulation is not field validation. Negative results belong in the record.
 
-These areas are not a product roadmap. They reflect different technical questions explored over time.
+## Working with the projects
 
-## Research status
+Each repository is its own experiment: consult its README for prerequisites, safety boundaries, reproducible commands, and current status. Do not infer production suitability from a repository name or a functioning demo.
 
-Northguard projects are intentionally experimental.
+Testing is limited to systems, accounts, networks, and devices you own or are explicitly authorized to assess. Some labs intentionally exercise risky protocol or application behavior; run them in isolated, instrumented environments. Do not use real personal data, live third-party targets, or production networks as substitutes for test fixtures.
 
-A repository may contain:
+For corrections, controlled reproductions, and scoped contributions, see the [contribution guide](https://github.com/Northguard-Security/.github/blob/main/CONTRIBUTING.md). Avoid posting credentials, personal data, or undisclosed security vulnerabilities in public issues.
 
-- a validated mechanism;
-- a controlled proof of concept;
-- an unfinished research direction;
-- simulation code;
-- failed hypotheses;
-- historical experiments;
-- components that were deliberately never developed into operational systems.
+---
 
-Documentation aims to distinguish these states explicitly.
-
-## Principle
-
-> **No capability exists until there is evidence that distinguishes success from coincidence, an intermediate output, or an incorrect interpretation.**
-
-**The code is the experiment. The measurement is the result.**
+<sub>Independent security research · Build the mechanism. Measure the outcome. Preserve the uncertainty.</sub>

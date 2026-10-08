@@ -1,0 +1,48 @@
+name: Public profile integrity
+
+on:
+  pull_request:
+    paths:
+      - 'profile/**'
+      - 'CONTRIBUTING.md'
+      - '.github/workflows/profile-check.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'profile/**'
+      - 'CONTRIBUTING.md'
+      - '.github/workflows/profile-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check-profile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public profile assets, links and policy
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          profile = Path("profile/README.md").read_text(encoding="utf-8")
+          contributing = Path("CONTRIBUTING.md").read_text(encoding="utf-8")
+          assert Path("profile/header.svg").is_file(), "Missing banner"
+          ET.parse("profile/header.svg")
+          assert "./header.svg" in profile, "Banner not referenced"
+          for slug in (
+              "PAW--Phishing-Attribution-Workbench--",
+              "Reverse-Observer",
+              "mirage-flow",
+              "Chimera",
+          ):
+              assert f"https://github.com/Northguard-Security/{slug}" in profile, slug
+          assert Path("CONTRIBUTING.md").is_file()
+          assert "CONTRIBUTING.md" in profile
+          assert "explicitly authorized" in profile
+          assert "negative controls" in profile
+          assert "private vulnerability reporting" in contributing
+          print("PROFILE_INTEGRITY_OK")
+          PY
