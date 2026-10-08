@@ -1,0 +1,35 @@
+name: Repository metadata catalog integrity
+
+on:
+  pull_request:
+    paths:
+      - repository-discovery.json
+      - DISCOVERY.md
+      - tools/sync_repository_discovery.py
+      - tests/test_repository_discovery.py
+      - .github/workflows/repository-discovery.yml
+  push:
+    branches: [main]
+    paths:
+      - repository-discovery.json
+      - DISCOVERY.md
+      - tools/sync_repository_discovery.py
+      - tests/test_repository_discovery.py
+      - .github/workflows/repository-discovery.yml
+
+permissions:
+  contents: read
+
+jobs:
+  catalog-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile metadata tooling
+        run: python -m py_compile tools/sync_repository_discovery.py tests/test_repository_discovery.py
+      - name: Validate catalog and simulated GitHub writes
+        run: python -m unittest discover -s tests -p 'test_repository_discovery.py' -v
