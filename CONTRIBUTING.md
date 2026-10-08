@@ -1,6 +1,6 @@
-# Contributing to Northguard Security
+# Contributing to NOEMETRA
 
-Northguard Security is an independent research workspace. Contributions that improve reproducibility, safety, technical correctness, and evidence quality are welcome.
+NOEMETRA is an independent research workspace. Contributions that improve reproducibility, safety, technical correctness, and evidence quality are welcome.
 
 ## Useful contributions
 
