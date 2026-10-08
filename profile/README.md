@@ -9,7 +9,7 @@
 
 **NOEMETRA** is an independent experimental software and systems research workspace. We build tools to investigate how real digital systems behave—across network protocols, forensic evidence, application security, signal analysis, and observability.
 
-Our work moves between building and investigation: a working mechanism, an instrumented experiment, a controlled measurement, and a result that can survive independent scrutiny. We keep negative results and failed hypotheses when they tell us something useful.
+Our work moves between building and investigation: a working mechanism, an instrumented experiment, a controlled measurement with negative controls, and a result that can survive independent scrutiny. We keep negative results and failed hypotheses when they tell us something useful.
 
 > **Systems. Signals. Evidence.** Software first; verification always.
 
