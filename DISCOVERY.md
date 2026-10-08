@@ -1,6 +1,6 @@
-# Northguard public-repository discovery metadata
+# NOEMETRA public-repository discovery metadata
 
-The organization publishes four software research repositories. Their public
+NOEMETRA currently publishes four software research repositories under the transitional `Northguard-Security` GitHub namespace. Their public
 discovery metadata is versioned in [`repository-discovery.json`](repository-discovery.json).
 
 The catalog covers **public repositories only**. Do not put private project
