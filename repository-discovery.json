@@ -1,0 +1,71 @@
+{
+  "organization": "Northguard-Security",
+  "repositories": [
+    {
+      "name": "PAW--Phishing-Attribution-Workbench--",
+      "description": "Email-forensics workbench for phishing analysis, evidence preservation, infrastructure correlation and structured case reporting.",
+      "topics": [
+        "phishing",
+        "email-forensics",
+        "email-security",
+        "digital-forensics",
+        "threat-intelligence",
+        "incident-response",
+        "infrastructure-analysis",
+        "osint",
+        "python",
+        "cybersecurity",
+        "security-research"
+      ]
+    },
+    {
+      "name": "Reverse-Observer",
+      "description": "Network-path and middlebox measurement experiments using controlled packet probes, protocol comparisons and recorded hypotheses.",
+      "topics": [
+        "network-security",
+        "network-measurement",
+        "protocol-analysis",
+        "packet-analysis",
+        "middlebox",
+        "deep-packet-inspection",
+        "tcp",
+        "scapy",
+        "python",
+        "security-research",
+        "network-analysis"
+      ]
+    },
+    {
+      "name": "mirage-flow",
+      "description": "Experimental packet-timing watermark detection, noise simulation and stateful response modeling for network research.",
+      "topics": [
+        "traffic-analysis",
+        "packet-timing",
+        "traffic-watermarking",
+        "network-monitoring",
+        "signal-processing",
+        "network-security",
+        "scapy",
+        "numpy",
+        "python",
+        "security-research"
+      ]
+    },
+    {
+      "name": "Chimera",
+      "description": "Clipboard-to-DOM-XSS lab with vulnerable and safe CRM fixtures for controlled browser-security experiments.",
+      "topics": [
+        "xss",
+        "dom-xss",
+        "cross-site-scripting",
+        "web-security",
+        "browser-security",
+        "clipboard-security",
+        "javascript",
+        "security-lab",
+        "security-research",
+        "cybersecurity"
+      ]
+    }
+  ]
+}
