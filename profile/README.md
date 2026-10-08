@@ -1,76 +1,53 @@
 <p align="center">
-  <img src="./header.svg" alt="Northguard Security — independent security research" width="100%" />
+  <img src="./header.svg" alt="NOEMETRA — Systems, Signals, Evidence; independent systems research" width="100%" />
 </p>
 
-# Security engineering grounded in evidence
+<p align="center">
+  <b>Independent Systems Research</b><br />
+  <sub>Build the mechanism. Measure the outcome. Preserve the uncertainty.</sub>
+</p>
 
-**Northguard Security** is an independent research workspace building practical tools and controlled experiments in digital forensics, network protocols, traffic analysis, and application security.
+**NOEMETRA** is an independent experimental software and systems research workspace. We build tools to investigate how real digital systems behave—across network protocols, forensic evidence, application security, signal analysis, and observability.
 
-The work starts with software and a concrete technical question. The result is measured against observations, negative controls, and failure cases—not just a successful run or an impressive-looking output.
+Our work moves between building and investigation: a working mechanism, an instrumented experiment, a controlled measurement, and a result that can survive independent scrutiny. We keep negative results and failed hypotheses when they tell us something useful.
 
-**Explore the public labs:** [PAW](https://github.com/Northguard-Security/PAW--Phishing-Attribution-Workbench--) · [Reverse Observer](https://github.com/Northguard-Security/Reverse-Observer) · [Mirage Flow](https://github.com/Northguard-Security/mirage-flow) · [Chimera](https://github.com/Northguard-Security/Chimera)
+> **Systems. Signals. Evidence.** Software first; verification always.
 
-## Public research projects
+## Explore the public software
 
-| Project | What it does | Where the evidence comes from |
+| Project | Built to explore | Inspectable output |
 | :--- | :--- | :--- |
-| **[PAW — Phishing Attribution Workbench](https://github.com/Northguard-Security/PAW--Phishing-Attribution-Workbench--)** | Ingests suspicious email, reconstructs delivery-path hypotheses, extracts indicators, correlates infrastructure, and produces forensic case artifacts. | Original messages, headers, hashes, case manifests, enrichment results, and explicit scoring heuristics. |
-| **[Reverse Observer](https://github.com/Northguard-Security/Reverse-Observer)** | Probes network-path and middlebox responses to controlled packet and protocol variations. | Raw-packet observations, structured experiment logs, and documented negative or inconclusive results. |
-| **[Mirage Flow](https://github.com/Northguard-Security/mirage-flow)** | Tests known packet-timing patterns under jitter and loss, alongside a modeled response-state controller. | Synthetic timing trials, correlation scores against comparison keys, and packet-timestamp measurements. |
-| **[Chimera](https://github.com/Northguard-Security/Chimera)** | Reproduces a clipboard-to-DOM-XSS trust-boundary failure in a deliberately vulnerable web fixture. | A controlled source page, an unsafe destination sink, and observable browser/network behavior. |
+| **[PAW — Phishing Attribution Workbench](https://github.com/Northguard-Security/PAW--Phishing-Attribution-Workbench--)** | Email forensics, delivery-path hypotheses, indicators, and infrastructure correlations | Case files, original inputs, hash manifests, forensic reports, and rule-based scoring |
+| **[Reverse Observer](https://github.com/Northguard-Security/Reverse-Observer)** | Observable network-path and middlebox behavior under controlled protocol variations | Experiment reports, negative findings, and offline artifact-integrity manifests |
+| **[Mirage Flow](https://github.com/Northguard-Security/mirage-flow)** | Timing-pattern detection under jitter and loss, and stateful response modeling | Controlled simulations, correlation measurements, and offline contract tests |
+| **[Chimera](https://github.com/Northguard-Security/Chimera)** | Clipboard-to-DOM-XSS trust-boundary failures | Deliberately vulnerable and safe control fixtures for comparison |
 
-These are **research tools and laboratory proofs of concept**, with different levels of implementation and validation. Read each repository's status and limitations before using or interpreting its results.
+The repositories document their individual maturity, prerequisites and safety boundaries. Experiments, simulations and heuristics are not presented as field validation or production security guarantees.
 
-## Research areas
-
-- **Email forensics and infrastructure correlation:** preserve source evidence, derive indicators, and separate correlation from operator attribution.
-- **Network and protocol behavior:** inspect stateful devices, timing signals, and transport-specific responses under repeatable stimuli.
-- **Application trust boundaries:** reproduce concrete failure modes and identify conditions under which they disappear.
-- **Detection and observability:** distinguish the fact that a signal was detected from claims about malicious intent, identity, or real-world effectiveness.
-
-Some other work remains in private research repositories. The public projects above are the documented entry points.
-
-## From mechanism to evidence
+## The research method
 
 ```text
-technical question
-       |
-       v
-working prototype
-       |
-       v
-controlled stimulus + baseline
-       |
-       v
-measurement + negative controls
-       |
-       v
-repetition / falsification
-       |
-       v
-documented result + known limits
+question → build → instrument → observe
+                     ↓
+          compare with controls
+                     ↓
+         reproduce or falsify
+                     ↓
+         report evidence + limits
 ```
 
-A result should state **what ran, what was observed, under which conditions, and what alternative explanations remain**.
+**Systems** — protocols, execution environments, application boundaries and infrastructure.
 
-We distinguish:
+**Signals** — timestamps, headers, packets, RF observations and measurable state transitions.
 
-- **Implemented:** code exists and executes a specified operation.
-- **Observed:** a measurable result occurred in a recorded environment.
-- **Reproduced:** the result survives a defined repeat test.
-- **Validated:** independent checks support the intended interpretation.
-- **Unverified or falsified:** the evidence is insufficient, or a tested prediction did not hold.
+**Evidence** — reproducible artifacts, integrity checks, controls and explicit uncertainty.
 
-An output is not an attribution. A correlation is not an identity. A simulation is not field validation. Negative results belong in the record.
+A logged event is an observation, not automatically an explanation. Correlation is not identity; a model is not a real-world measurement; a detected pattern is not proof of malicious intent.
 
-## Working with the projects
+## Research with clear boundaries
 
-Each repository is its own experiment: consult its README for prerequisites, safety boundaries, reproducible commands, and current status. Do not infer production suitability from a repository name or a functioning demo.
+We build and test in controlled environments and on systems we own or are explicitly authorized to study. Some experiments involve active traffic, browser behavior, or suspicious inputs; isolation and observability matter as much as the code.
 
-Testing is limited to systems, accounts, networks, and devices you own or are explicitly authorized to assess. Some labs intentionally exercise risky protocol or application behavior; run them in isolated, instrumented environments. Do not use real personal data, live third-party targets, or production networks as substitutes for test fixtures.
+For reports and contributions, see [CONTRIBUTING.md](https://github.com/Northguard-Security/.github/blob/main/CONTRIBUTING.md). For the visual language, see the [NOEMETRA identity guide](https://github.com/Northguard-Security/.github/blob/main/brand/README.md).
 
-For corrections, controlled reproductions, and scoped contributions, see the [contribution guide](https://github.com/Northguard-Security/.github/blob/main/CONTRIBUTING.md). Avoid posting credentials, personal data, or undisclosed security vulnerabilities in public issues.
-
----
-
-<sub>Independent security research · Build the mechanism. Measure the outcome. Preserve the uncertainty.</sub>
+<sub>NOEMETRA is the new public research identity of the workspace previously known as Northguard Security. The GitHub organization URL remains unchanged during the technical migration.</sub>
